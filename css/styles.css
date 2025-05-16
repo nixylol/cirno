@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f8ff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    touch-action: manipulation; /* Mejora respuesta táctil */
+}
+
+#start-screen {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+    z-index: 100;
+}
+
+#main-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.cirno {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    pointer-events: auto;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    z-index: 10;
+    transform: rotate(0deg); /* Rotación inicial */
+    transition: transform 0.1s; /* Suaviza la rotación durante el movimiento */
+}
+
+.cirno:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 600px) {
+    .cirno {
+        width: 60px; /* Más pequeño en móviles */
+    }
+    #start-screen {
+        font-size: 1.5em;
+    }
+}
